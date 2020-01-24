@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;overflow:hidden;">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./favicon.svg" />
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title></title>
+</head>
+
+<body style="margin:0;padding:0;">
+    <noscript>You need to enable JavaScript to run this app</noscript>
+    <style>
+        @element html and (orientation: landscape) and (min-width: 769px) {
+            .web_app {
+                transform: scaleX(eval('window.innerWidth / 1366')) scaleY(eval("window.innerHeight / 768"));
+                transform-origin: left top;
+            }
+        }
+        @element html and (orientation: portrait) and (min-width: 769px) {
+            .web_app {
+                transform: scaleX(eval('window.innerWidth / 768')) scaleY(eval("window.innerHeight / 1366"));
+                transform-origin: left top;
+            }
+        }
+        @element html and (orientation: landscape) and (max-width: 768px) {
+            .web_app {
+                transform: scaleX(eval('window.innerWidth / 768')) scaleY(eval("window.innerHeight / 432"));
+                transform-origin: left top;
+            }
+        }
+        @element html and (orientation: portrait) and (max-width: 768px) {
+            .web_app {
+                transform: scaleX(eval('window.innerWidth / 432')) scaleY(eval("window.innerHeight / 768"));
+                transform-origin: left top;
+            }
+        }
+    </style>
+    <div class="web_app" id="web_app">
+        <webview id="web_view" class="web_view"></webview>
+    </div>
+    <script type="application/javascript"></script>
+    <script src="./lib_client.js"></script>
+    <script src="./views.js"></script>
+</body>
+
+</html>
